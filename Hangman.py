@@ -10,14 +10,17 @@
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-
-    print("""Welcome to the game Hangman      _    _
+    HANGMAN_ASCII_ART = """Welcome to the game Hangman      _    _
    | |  | |
    | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
    |  __  |/ _' | '_ \ / _' | '_ ' _ \ / _' | '_ \\
    | |  | | (_| | | | | (_| | | | | | | (_| | | | |
    |_|  |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                         __/ |
-                       |___/""")
+                       |___/"""
 
+    MAX_TRIES = 6
+    print(HANGMAN_ASCII_ART+" \n",MAX_TRIES)
 
+    guess = input("Guess a letter:")
+    print(guess)
