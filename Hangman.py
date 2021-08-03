@@ -23,4 +23,16 @@ if __name__ == '__main__':
     print(HANGMAN_ASCII_ART+" \n",MAX_TRIES)
 
     guess = input("Guess a letter:")
-    print(guess)
+    if len(guess)>1 and guess.isalpha():
+        print("E1")
+    elif not guess.isalpha() and len(guess)== 1:
+        print("E2")
+    elif not guess.isalpha() and len(guess)>1:
+        print("E3")
+    else:
+        print(guess)
+
+
+    guess_word = input("Please enter a word:")
+    underscore_number ="_ " * len(guess_word)
+    print(underscore_number)
