@@ -9,8 +9,13 @@ def swap(a ,b):
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def distance(num1, num2, num3):
+    return abs(num1-num2)==1 or abs(num1-num3)==1
 
 
+def last_early(my_str):
+    contain = my_str[:-1]
+    return contain.count(my_str[-1])>0
 if __name__ == '__main__':
     # pol_word = input("put a word that you think is a palindrome:")
     # temp = pol_word.replace(" ", "").upper()
@@ -20,6 +25,8 @@ if __name__ == '__main__':
     #     print("OK")
     # else:
     #     print("NOT")
+    print(distance(1,5,3))
+    print( last_early("rmy_str"))
 
 
     temperature = input("Insert the temperature you would like to convert:")
