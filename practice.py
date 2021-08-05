@@ -10,12 +10,27 @@ def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 def distance(num1, num2, num3):
-    return abs(num1-num2)==1 or abs(num1-num3)==1
+    return abs(num1-num2) ==1 or abs(num1-num3) == 1
+
+def shift_left(list):
+    return (list+list)[1:len(list)+1]
+
+
+def  format_list(list, ):
+    list[-1]="and "
+    pairindex = list[::2]
+    #pairindex[-1] = "and "+pairindex[-1]
+    pair_with_coma = ",".join(pairindex[-1])+", and" +pairindex[-1]
+    return ",".join(pairindex[:-1])+", and " +pairindex[-1]
 
 
 def last_early(my_str):
     contain = my_str[:-1]
     return contain.count(my_str[-1])>0
+
+def longest(my_list):
+    return max(list1,key = len)
+
 if __name__ == '__main__':
     # pol_word = input("put a word that you think is a palindrome:")
     # temp = pol_word.replace(" ", "").upper()
@@ -25,10 +40,16 @@ if __name__ == '__main__':
     #     print("OK")
     # else:
     #     print("NOT")
+    list1 = ["111", "234", "2000", "goru", "birthday", "09"]
+
+    print(longest(list1))
+    brother = ["shimon","osher","shir","ema"]
+    print(format_list(brother))
     print(distance(1,5,3))
     print( last_early("rmy_str"))
 
-
+    x = [1, 2, 3, 4]
+    print(shift_left(x))
     temperature = input("Insert the temperature you would like to convert:")
     if temperature[-1] == "F" or temperature[-1] == "f":
 
