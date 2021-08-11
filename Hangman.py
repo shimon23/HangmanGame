@@ -40,13 +40,13 @@ def show_hidden_word(secret_word, old_letters_guessed):
         if letter in secret_word:
            for i in range(len(secret_word)):
                if letter == secret_word[i] or letter == secret_word[i].upper():
-                   ans[i]=letter
+                   ans[i]=" "+letter
                else:
                    if ans[i] != " _":
                        continue
                    else:
                         ans[i]=(" _")
-    return ans
+    return "".join(ans)
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     HANGMAN_ASCII_ART = """Welcome to the game Hangman      _    _
