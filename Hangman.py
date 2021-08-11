@@ -47,6 +47,15 @@ def show_hidden_word(secret_word, old_letters_guessed):
                    else:
                         ans[i]=(" _")
     return "".join(ans)
+
+def check_win(secret_word, old_letters_guessed):
+    ans = show_hidden_word(secret_word,old_letters_guessed).split()
+    print(ans)
+    for i in ans:
+        if i == "_":
+            return False
+    return True
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     HANGMAN_ASCII_ART = """Welcome to the game Hangman      _    _
@@ -60,7 +69,7 @@ if __name__ == '__main__':
 
     MAX_TRIES = 6
     print(HANGMAN_ASCII_ART + " \n", MAX_TRIES)
-    print(show_hidden_word("shismon",["s","h"]))
+    print(show_hidden_word("shismon",["s","h"]),"win? ", check_win("shismon",["s","h"]))
     guess = input("Guess a letter:")
     if len(guess) > 1 and guess.isalpha():
         print("E1")
