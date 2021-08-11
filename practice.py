@@ -16,7 +16,7 @@ def shift_left(list):
     return (list+list)[1:len(list)+1]
 
 
-def  format_list(list, ):
+def  format_list(list):
     list[-1]="and "
     pairindex = list[::2]
     #pairindex[-1] = "and "+pairindex[-1]
@@ -31,6 +31,33 @@ def last_early(my_str):
 def longest(my_list):
     return max(list1,key = len)
 
+def numbers_letters_count(my_str):
+    numbers = 0
+    chars = 0
+    for str in my_str:
+        if(str.isnumeric()):
+            numbers+=1
+        else:
+            chars+=1
+    print("[ ",numbers,", ",chars," ]")
+
+def sequence_del(my_str):
+    ans = ""
+    for char in my_str:
+        if char not in ans:
+            ans+=char
+
+    print(ans)
+
+# def shopping_list(str_items):
+#     list_item = list(str_items.split(","))
+#     print(list_item)
+#     user_input =int(input(""))
+#     while()
+
+
+
+
 if __name__ == '__main__':
     # pol_word = input("put a word that you think is a palindrome:")
     # temp = pol_word.replace(" ", "").upper()
@@ -40,8 +67,10 @@ if __name__ == '__main__':
     #     print("OK")
     # else:
     #     print("NOT")
+    #shopping_list("Milk,Cottage,Tomatoes")
+    sequence_del("ssshhhiimmon")
     list1 = ["111", "234", "2000", "goru", "birthday", "09"]
-
+    numbers_letters_count("Python 3.6.3")
     print(longest(list1))
     brother = ["shimon","osher","shir","ema"]
     print(format_list(brother))

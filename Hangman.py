@@ -33,6 +33,20 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
         return False
 
 
+def show_hidden_word(secret_word, old_letters_guessed):
+    ans =[" _"]*len(secret_word)
+
+    for letter in old_letters_guessed:
+        if letter in secret_word:
+           for i in range(len(secret_word)):
+               if letter == secret_word[i] or letter == secret_word[i].upper():
+                   ans[i]=letter
+               else:
+                   if ans[i] != " _":
+                       continue
+                   else:
+                        ans[i]=(" _")
+    return ans
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     HANGMAN_ASCII_ART = """Welcome to the game Hangman      _    _
@@ -46,7 +60,7 @@ if __name__ == '__main__':
 
     MAX_TRIES = 6
     print(HANGMAN_ASCII_ART + " \n", MAX_TRIES)
-
+    print(show_hidden_word("shismon",["s","h"]))
     guess = input("Guess a letter:")
     if len(guess) > 1 and guess.isalpha():
         print("E1")
